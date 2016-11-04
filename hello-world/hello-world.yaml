@@ -1,0 +1,33 @@
+bitfunnel-commit-hash: 618214be1ecd32afd09ccab1771e947d11cf6dab
+lab-book-version: 0.0.1
+query-log:
+    raw-url: https://raw.githubusercontent.com/BitFunnel/Experiments/master/hello-world/queries.txt
+    sha512: 56417da71c3373bcd49f8d22da9bc6af2ad4f0f4ee524572de884a85e571ab72c42aaea508b74c7cb98fc0aa948da854fd6747eead285ee4b75a84479f0b03db
+corpus:
+    - name: enwiki-20161020-chunked1.tar.gz
+      sha512: 1a3be37650cbb6708c2c4385f6ebcf944d1cda933f2dd327de20acb6c72cf687737540f0108bcdcd4b6fc1e5014824bf1cdcb3304e87bfe6a82e0c7642b28e3f
+samples:
+    - name: configSample1
+      gram-size: 1
+      random-sample:
+          seed: 42
+          fraction: 0.2
+      size-limits:
+          min-posting-count: 50
+          max-posting-count: 100
+      max-documents: 5000000
+    - name: ingestSample
+      gram-size: 1
+      random-sample:
+          seed: 43
+          fraction: 1
+      size-limits:
+          min-posting-count: 50
+          max-posting-count: 100
+statistics-config:
+    gram-size: 1
+    sample-name: configSample1
+runtime-config:
+    gram-size: 1
+    ingest-threads: 1
+    sample-name: ingestSample
